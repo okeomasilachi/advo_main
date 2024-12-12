@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { staffAvatar } from "@/assets/images";
+import { staffAvatar } from "@/public";
 import { EllipsisHorizontalIcon } from "@heroicons/react/24/solid";
 
 export function AdminTable() {

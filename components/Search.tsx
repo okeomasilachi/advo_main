@@ -1,7 +1,7 @@
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-const Search = ({ placeholder }: { placeholder: string }) => {
+const Search = ({ placeholder, className }: { placeholder: string, className: string }) => {
   return (
-    <label className="relative block">
+    <label className={"relative block " + className}>
       <span className="sr-only">Search</span>
       <span className="absolute inset-y-0 left-0 flex items-center pl-2">
         <MagnifyingGlassIcon className="w-5 h-5" />

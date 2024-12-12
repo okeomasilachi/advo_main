@@ -1,4 +1,6 @@
-import { Logo, Avatar, Teaching, Money } from "@/assets/images/index";
+"use client";
+
+import { Logo, Avatar, Teaching, Money } from "@/public/index";
 import { useState } from "react";
 import Image from "next/image";
 import {

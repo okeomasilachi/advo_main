@@ -1,7 +1,8 @@
 import CardWrapper from "@/components/Card";
 import Search from "@/components/Search";
-import { staffAvatar, Notify } from "@/assets/images";
+import { staffAvatar, Notify } from "@/public";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/solid";
+import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { Options } from "@/lib/definition";
@@ -54,7 +55,7 @@ const Dashboard = () => {
         <h1 className="text-2xl sm:text-3xl font-medium">Good Morning</h1>
         <div className="flex justify-between gap-2">
           <Search placeholder="" />
-          <img src={Notify} alt="Notify" />
+          <Image src={Notify} alt="Notify" />
         </div>
       </div>
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -81,7 +82,7 @@ const Dashboard = () => {
           <ScrollArea className="flex flex-col gap-3">
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={staffAvatar}
                   className="rounded-full"
                   width={28}
@@ -96,7 +97,7 @@ const Dashboard = () => {
             <Separator />
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={staffAvatar}
                   className="rounded-full"
                   width={28}
@@ -111,7 +112,7 @@ const Dashboard = () => {
             <Separator />
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={staffAvatar}
                   className="rounded-full"
                   width={28}
@@ -126,7 +127,7 @@ const Dashboard = () => {
             <Separator />
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={staffAvatar}
                   className="rounded-full"
                   width={28}
@@ -141,7 +142,7 @@ const Dashboard = () => {
             <Separator />
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={staffAvatar}
                   className="rounded-full"
                   width={28}
@@ -156,7 +157,7 @@ const Dashboard = () => {
             <Separator />
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={staffAvatar}
                   className="rounded-full"
                   width={28}
@@ -171,7 +172,7 @@ const Dashboard = () => {
             <Separator />
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={staffAvatar}
                   className="rounded-full"
                   width={28}
@@ -186,7 +187,7 @@ const Dashboard = () => {
             <Separator />
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={staffAvatar}
                   className="rounded-full"
                   width={28}
@@ -201,7 +202,7 @@ const Dashboard = () => {
             <Separator />
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={staffAvatar}
                   className="rounded-full"
                   width={28}
@@ -220,22 +221,14 @@ const Dashboard = () => {
           <div className="border h-[306px] p-4 border-solid border-white-100 rounded-md shadow-md flex flex-col justify-around">
             <h1 className="text-xl">Employee List</h1>
             <div className="flex gap-2 flex-wrap sm:flex-none">
-              <img
+              <Image
                 src={staffAvatar}
                 className="rounded-full"
                 width={28}
                 height={28}
                 alt="profile picture"
               />
-              <img
-                src={staffAvatar}
-                className="rounded-full"
-                width={28}
-                height={28}
-                alt="profile picture"
-              />
-
-              <img
+              <Image
                 src={staffAvatar}
                 className="rounded-full"
                 width={28}
@@ -243,49 +236,57 @@ const Dashboard = () => {
                 alt="profile picture"
               />
 
-              <img
+              <Image
                 src={staffAvatar}
                 className="rounded-full"
                 width={28}
                 height={28}
                 alt="profile picture"
               />
-              <img
+
+              <Image
                 src={staffAvatar}
                 className="rounded-full"
                 width={28}
                 height={28}
                 alt="profile picture"
               />
-              <img
+              <Image
                 src={staffAvatar}
                 className="rounded-full"
                 width={28}
                 height={28}
                 alt="profile picture"
               />
-              <img
+              <Image
                 src={staffAvatar}
                 className="rounded-full"
                 width={28}
                 height={28}
                 alt="profile picture"
               />
-              <img
+              <Image
                 src={staffAvatar}
                 className="rounded-full"
                 width={28}
                 height={28}
                 alt="profile picture"
               />
-              <img
+              <Image
                 src={staffAvatar}
                 className="rounded-full"
                 width={28}
                 height={28}
                 alt="profile picture"
               />
-              <img
+              <Image
+                src={staffAvatar}
+                className="rounded-full"
+                width={28}
+                height={28}
+                alt="profile picture"
+              />
+              <Image
                 src={staffAvatar}
                 className="rounded-full"
                 width={28}

@@ -5,7 +5,7 @@ import {
   Paid,
   Pending,
   Total,
-} from "@/assets/images";
+} from "@/public";
 import Image from "next/image";
 const iconMap = {
   student: Student,

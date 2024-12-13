@@ -64,6 +64,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+[data-active="true"] {
+  background-color: #3b82f6; /* Example active color */
+  color: white;
+}
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

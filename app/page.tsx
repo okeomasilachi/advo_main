@@ -16,6 +16,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import Chart from "@/components/Chart";
 
 type cardD = {
   icon: IconName;
@@ -23,14 +24,10 @@ type cardD = {
   fig: number;
 };
 
-const cardData: cardD[] = [
-  { icon: "Graduate", description: "Total number of students", fig: 78376 },
-  { icon: "Group", description: "Total number of employees", fig: 1496 },
-  { icon: "Delivery", description: "Total number of inventories", fig: 8401 },
-];
 export default async function Home() {
-  const employees = await fetchUserData(10);
+  const employees = await fetchUserData(8);
   const students = await fetchUserData(6);
+
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
@@ -43,11 +40,11 @@ export default async function Home() {
           </Button>
         </div>
       </div>
-      <div className="stack-h justify-between lg:justify-evenly gap-x-2 md:gap-x-10 my-10">
+      <div className="stack-h justify-between gap-x-2 md:gap-x-5 my-10">
         {cardData.map((card) => (
           <Card
             key={card.icon as string}
-            className="max-w-[300px] min-h-[30%] shadow-sm shadow-blue-100/50"
+            className="w-full min-h-[30%] shadow-sm shadow-blue-100/50"
           >
             <CardHeader className="center">
               <Icon
@@ -112,48 +109,79 @@ export default async function Home() {
             </CardHeader>
             <CardContent className="stack-h gap-3">
               {employees.map((user) => (
-          <Avatar key={user.name}>
-            <AvatarImage src={user.image} />
-            <AvatarFallback>
-              {user.name
-                .split(" ")
-                .map((n) => n[0])
-                .join("")}
-            </AvatarFallback>
-          </Avatar>
+                <Avatar key={user.name}>
+                  <AvatarImage src={user.image} />
+                  <AvatarFallback>
+                    {user.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </AvatarFallback>
+                </Avatar>
               ))}
             </CardContent>
             <CardFooter>
               <Search placeholder="Search" className={"w-full"} />
             </CardFooter>
           </Card>
-          <Card className="w-full flex-1 shadow-sm shadow-blue-100/50">
-            <CardHeader>
-              <h3>Employee List</h3>
-            </CardHeader>
-            <CardContent className="stack-h gap-3">
-              {employees.map((user) => (
-          <Avatar key={user.name}>
-            <AvatarImage src={user.image} />
-            <AvatarFallback>
-              {user.name
-                .split(" ")
-                .map((n) => n[0])
-                .join("")}
-            </AvatarFallback>
-          </Avatar>
-              ))}
-            </CardContent>
-            <CardFooter>
-              <Search placeholder="Search" className={"w-full"} />
-            </CardFooter>
-          </Card>
+          <Chart
+            data={financialData}
+            chartType="line"
+            options={{
+              title: {
+                display: true,
+                text: "Earnings",
+              },
+              colors: ["#0088FE", "#00C49F", "#FFBB28"],
+            }}
+          />
         </div>
       </div>
     </div>
   );
 }
 
+const cardData: cardD[] = [
+  { icon: "Graduate", description: "Total number of students", fig: 78376 },
+  { icon: "Group", description: "Total number of employees", fig: 1496 },
+  { icon: "Delivery", description: "Total number of inventories", fig: 8401 },
+];
+
+const financialData = {
+  Income: [
+    { name: "Jan", value: 5000 },
+    { name: "Feb", value: 4500 },
+    { name: "Mar", value: 6000 },
+    { name: "Apr", value: 5500 },
+    { name: "May", value: 7000 },
+    { name: "Jun", value: 6500 },
+  ],
+  Expenses: [
+    { name: "Jan", value: 2000 },
+    { name: "Feb", value: 2500 },
+    { name: "Mar", value: 3000 },
+    { name: "Apr", value: 2800 },
+    { name: "May", value: 3200 },
+    { name: "Jun", value: 3100 },
+  ],
+  Fees: [
+    { name: "Jan", value: 9500 },
+    { name: "Feb", value: 3500 },
+    { name: "Mar", value: 6000 },
+    { name: "Apr", value: 8550 },
+    { name: "May", value: 7700 },
+    { name: "Jun", value: 6500 },
+  ],
+};
+
+/**
+ * The function `getGreeting` returns a greeting based on the current time of the
+ * day (Morning, Afternoon, or Evening).
+ * @returns The function `getGreeting()` returns a string indicating the time of
+ * day based on the current hour. It returns "Morning" if the hour is before 12,
+ * "Afternoon" if the hour is between 12 and 18, and "Evening" if the hour is 18 or
+ * later.
+ */
 function getGreeting() {
   const now = new Date();
   const hours = now.getHours();

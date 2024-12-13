@@ -17,6 +17,7 @@ import {
 } from "@radix-ui/react-collapsible";
 import Image from "next/image";
 import Icon, { IconName } from "./ui/Icon";
+import Link from "next/link";
 
 export function AppSidebar() {
   return (
@@ -25,7 +26,7 @@ export function AppSidebar() {
         <div className="center">
           <div className="stack-h mb-5">
             <Icon name="Logo" size={30} />
-            <h4 className='font-semibold ml-3'>AdvoScholar</h4>
+            <h4 className="font-semibold ml-3">AdvoScholar</h4>
           </div>
           <Image
             src={Avatar}
@@ -46,28 +47,40 @@ export function AppSidebar() {
             {menu.map((item) => (
               <SidebarMenu key={item.id}>
                 <Collapsible
-                  defaultOpen={item.hasSubmenu}
+                  defaultOpen={item.id === "employee"}
                   className="group/collapsible"
                 >
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
-                      <SidebarMenuButton>
-                        {item.icon && (
-                          <Icon
-                            name={item.icon as IconName}
-                            size={25}
-                            className="mr-3"
-                          />
-                        )}
-                        <span>{item.title}</span>
+                      <SidebarMenuButton
+                        asChild
+                        variant="default"
+                        tooltip={item.title}
+                      >
+                        <Link href={`?tab=${item.id}`}>
+                          {item.icon && (
+                            <Icon
+                              name={item.icon as IconName}
+                              size={25}
+                              className="mr-3"
+                            />
+                          )}
+                          <span>{item.title}</span>
+                        </Link>
                       </SidebarMenuButton>
                     </CollapsibleTrigger>
                     {item.hasSubmenu && (
                       <CollapsibleContent>
                         <SidebarMenuSub>
                           {item.submenuItems.map((subItem) => (
-                            <SidebarMenuButton key={subItem}>
-                              {subItem}
+                            <SidebarMenuButton asChild key={subItem}>
+                              <Link
+                                href={`?tab=${
+                                  item.id
+                                }&sub=${subItem.toLowerCase()}`}
+                              >
+                                {subItem}
+                              </Link>
                             </SidebarMenuButton>
                           ))}
                         </SidebarMenuSub>

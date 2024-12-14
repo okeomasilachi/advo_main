@@ -21,7 +21,7 @@ import Link from "next/link";
 
 export function AppSidebar() {
   return (
-    <Sidebar>
+    <Sidebar variant="floating">
       <SidebarHeader className="py-5 border-b-2">
         <div className="center">
           <div className="stack-h mb-5">
@@ -57,7 +57,7 @@ export function AppSidebar() {
                         variant="default"
                         tooltip={item.title}
                       >
-                        <Link href={`?tab=${item.id}`}>
+                        <Link href={item.id === "employee" ? "/" : `/${item.id}`}>
                           {item.icon && (
                             <Icon
                               name={item.icon as IconName}
@@ -75,9 +75,7 @@ export function AppSidebar() {
                           {item.submenuItems.map((subItem) => (
                             <SidebarMenuButton asChild key={subItem}>
                               <Link
-                                href={`?tab=${
-                                  item.id
-                                }&sub=${subItem.toLowerCase()}`}
+                                href={`/${subItem.toLowerCase()}`}
                               >
                                 {subItem}
                               </Link>

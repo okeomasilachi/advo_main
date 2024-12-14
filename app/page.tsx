@@ -30,7 +30,7 @@ export default async function Home() {
 
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
+    <div>
       <div className="flex flex-col md:flex-row gap-10 justify-between">
         <h2 className="">Good {getGreeting()}</h2>
         <div className="flex gap-5 w-[300px]">
